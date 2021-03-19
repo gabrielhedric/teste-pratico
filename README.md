@@ -1,5 +1,3 @@
-<img alt="GoStack" align="center" src="https://www.seidorbrasil.com.br/Content/assets/img/logo-default.png" />
-
 <h3 align="center">
   Teste Técnico Prático - Back-end
 </h3>
