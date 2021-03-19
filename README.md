@@ -18,9 +18,9 @@ A finalidade do Teste Técnico Prático é desenvolver um sistema web que nos pe
 
  * Clonar o repositório: git clone https://github.com/gabrielhedric/teste-pratico-seidor.git
  
- * Navegar a até a pasta do repositório e executar yarn no seu terminal
+ * Navegar a até a pasta do repositório e executar **`yarn`** no seu terminal
  
- * Depois que instalar as dependências do projetos, podemos executar yarn dev no terminal e utilizar a aplicação.
+ * Depois que instalar as dependências do projetos, podemos executar **`yarn dev `** no terminal e utilizar a aplicação.
 
  * Para teste das rotas foi utilizado o Insomnia 
  * Rotas Automobile: 
