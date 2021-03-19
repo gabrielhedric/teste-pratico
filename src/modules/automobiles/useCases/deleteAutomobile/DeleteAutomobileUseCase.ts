@@ -1,4 +1,4 @@
-import { IAutomobilesRepository } from '../../repositories/IAutomobilesRepository';
+import { IAutomobilesRepository } from '../../repositories/IAutomobilesRepositoryDTO';
 
 class DeleteAutomobileUseCase {
     constructor (private automobilesRepository: IAutomobilesRepository){}

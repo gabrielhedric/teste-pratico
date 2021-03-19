@@ -1,18 +1,21 @@
-import { UseAutomobile } from '../model/UseAutomobile';
 import { Automobile } from '../../automobiles/model/Automobile';
 import { Driver } from '../../drivers/model/Driver';
+import { UseAutomobile } from '../model/UseAutomobile';
 
-interface ICreateUseAutomobile {
-    id: string;
-    start_use: Date;
-    end_use: Date;
-    driver: Driver; 
-    automobile: Automobile;
-    reason_use: string; 
+interface ICreateUseAutomobileDTO {
+    license_plate: Automobile;
+    id: Driver;
+    reasonUse: string,
+    startUse: Date,
+    endUse: Date
 }
 
-interface IUseAutomobileRepository {
-
+//Contrato
+interface IUseAutomobileRepository{
+    findByLicensePlate(license_plate: string) : Automobile;
+    findById(id: string): Driver;
+    list(): UseAutomobile[];
+    create(driverUse: string, carUse: string, reasonUse:string): UseAutomobile;
 }
 
-export { IUseAutomobileRepository, ICreateUseAutomobile }
+export { IUseAutomobileRepository, ICreateUseAutomobileDTO };

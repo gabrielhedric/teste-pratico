@@ -1,6 +1,6 @@
 import { Automobile } from "../model/Automobile";
 
-interface ICreateAutomobile {
+interface ICreateAutomobileDTO {
     license_plate: string;
     color: string;
     brand: string;
@@ -9,11 +9,11 @@ interface ICreateAutomobile {
 
 interface IAutomobilesRepository {
     list(): Automobile[];
-    create({license_plate, color, brand}: ICreateAutomobile) : void;
-    update({ id, license_plate, color, brand} : ICreateAutomobile);
+    create({license_plate, color, brand}: ICreateAutomobileDTO);
+    update({ id, license_plate, color, brand} : ICreateAutomobileDTO);
     delete({ id }) : void;
     listById({ id });
     findyByLicensePlate(id: string) : Automobile;
 }
 
-export { IAutomobilesRepository, ICreateAutomobile };
+export { IAutomobilesRepository, ICreateAutomobileDTO };

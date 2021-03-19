@@ -1,4 +1,4 @@
-import { IAutomobilesRepository } from '../../repositories/IAutomobilesRepository';
+import { IAutomobilesRepository } from '../../repositories/IAutomobilesRepositoryDTO';
 
 interface IRequest {
     license_plate: string;

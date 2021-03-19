@@ -1,5 +1,5 @@
 import { Automobile } from '../../model/Automobile';
-import { IAutomobilesRepository } from '../../repositories/IAutomobilesRepository';
+import { IAutomobilesRepository } from '../../repositories/IAutomobilesRepositoryDTO';
 
 
 class ListAllAutomobilesUseCase {

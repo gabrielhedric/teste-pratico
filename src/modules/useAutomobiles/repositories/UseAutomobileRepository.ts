@@ -1,12 +1,15 @@
+import { ICreateUseAutomobileDTO } from './IUseAutomobileRepository';
 import { UseAutomobile } from '../model/UseAutomobile';
+import { DriversRepository } from '../../drivers/repositories/DriversRepository';
+import { AutomobilesRepository } from '../../automobiles/repositories/AutomobilesRepository';
 
 class UseAutomobileRepository {
-    private useAutomobile: UseAutomobile[];
+    public useAutomobiles: UseAutomobile[];
 
-    private static INSTANCE: UseAutomobileRepository;
+    public static INSTANCE: UseAutomobileRepository;
 
-    private constructor() {
-        this.useAutomobile = [];
+    public constructor() {
+        this.useAutomobiles = [];
     }
 
     public static getInstance(): UseAutomobileRepository{
@@ -14,6 +17,19 @@ class UseAutomobileRepository {
             UseAutomobileRepository.INSTANCE = new UseAutomobileRepository();
         }
         return UseAutomobileRepository.INSTANCE;
+    }
+
+    create({id, license_plate, reasonUse }: ICreateUseAutomobileDTO ) {
+        const useAutomobiles = new UseAutomobile();
+
+        const automobile = AutomobilesRepository.getInstance().listById({id})
+
+        Object.assign(automobile,{
+            license_plate,
+            id,
+            reasonUse,
+            startUse: new Date()
+        });
     }
 
 }

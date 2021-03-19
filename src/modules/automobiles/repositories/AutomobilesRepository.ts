@@ -1,13 +1,13 @@
 import { Automobile } from '../model/Automobile';
-import { ICreateAutomobile, IAutomobilesRepository } from '../repositories/IAutomobilesRepository';
+import { ICreateAutomobileDTO } from './IAutomobilesRepositoryDTO';
 
 class AutomobilesRepository {
     
-    private automobiles: Automobile[];
+    public automobiles: Automobile[];
 
-    private static INSTANCE: AutomobilesRepository;
+    public static INSTANCE: AutomobilesRepository;
 
-    private constructor() {
+    public constructor() {
         this.automobiles = [];
     }
 
@@ -18,7 +18,7 @@ class AutomobilesRepository {
         return AutomobilesRepository.INSTANCE;
     }
 
-    create({ license_plate, color, brand } : ICreateAutomobile ): void  {
+    create({ license_plate, color, brand } : ICreateAutomobileDTO ): void  {
         const automobile = new Automobile(); 
     
         Object.assign(automobile, {
@@ -35,7 +35,7 @@ class AutomobilesRepository {
         return this.automobiles;
     }
 
-    update({ id, license_plate, color, brand} : ICreateAutomobile ){
+    update({ id, license_plate, color, brand} : ICreateAutomobileDTO ){
 
         const automobile = this.automobiles.find(automobile => automobile.id === id);
 

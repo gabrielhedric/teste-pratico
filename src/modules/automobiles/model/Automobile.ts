@@ -1,8 +1,10 @@
 import { v4 as uuidV4 } from "uuid";
 
+
+//Modelo do objeto que estamos criando
 class Automobile {
 
-    id: string;
+    id?: string;
     license_plate: string;
     color: string;
     brand: string;
