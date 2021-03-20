@@ -8,7 +8,7 @@ class UpdateAutomobileController {
     handle(request: Request, response: Response) : Response{
         const { license_plate, color, brand } = request.body;
         const { id } = request.params;
-
+        
         try {
             const automobile = this.updateAutomobileUseCase.execute({id, license_plate, color, brand});
             return response.status(201).json(automobile);

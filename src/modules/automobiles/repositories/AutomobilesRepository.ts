@@ -64,6 +64,12 @@ class AutomobilesRepository {
         return automobile;
     }
 
+    findById({id}) : Automobile {
+        const automobile = this.automobiles.find(automobile => automobile.id === id);
+
+        return automobile;
+    }
+
     findyByLicensePlate(license_plate: string) : Automobile {
         const automobile = this.automobiles.find(automobile => automobile.license_plate === license_plate);
         return automobile;
