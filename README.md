@@ -45,3 +45,40 @@ A finalidade do TTP é desenvolver um sistema web que nos permita controlar a ut
 
 ![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/automobiles/deleteAutomobile.png?raw=true)
 
+### Rotas Motorista: 
+
+**Criando um motorista** **`POST`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/drivers/createDriver.png?raw=true)
+
+**Listando todos os motoristas cadastrados** **`GET`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/drivers/listAllDrivers.png?raw=true)
+
+**Listando motorista pelo ID ** **`GET`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/drivers/listByIdDriver.png?raw=true)
+
+**Atualizando motorista ** **`PUT`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/drivers/updateDriver.png?raw=true)
+
+**Excluindo motorista ** **`DELE`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/drivers/deleteDriver.png?raw=true)
+
+### Rotas Utilização do Automóvel: 
+
+**Criando o registro de uso do automóvel com o ID do motorista ** **`POST`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/useAutomobiles/criando-registro-de-uso.png?raw=true)
+
+**Listando o registro de uso do automóvel ** **`GET`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/useAutomobiles/listando-automovel-em-uso.png?raw=true)
+
+**Verificação de outro motorista tentando utilizar o mesmo automóvel ** **`POST`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/useAutomobiles/outro-motorista-tentando-usar-mesmo-automovel.png?raw=true)
+
+**Finalizando o uso do automóvel ** **`POST`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/useAutomobiles/fianlizando-uso-do-automovel.png?raw=true)
+
+**Listagem da finalização do uso do automóvel ** **`GET`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/useAutomobiles/fianlizando-uso-do-automovel.png?raw=true)
+
+**Depois de finalizado o uso do automóvel, outro motorista utilizando ** **`POST`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/useAutomobiles/depois-de-finalizado-o-uso-motorista-utilizando.png?raw=true)
+
