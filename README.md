@@ -22,7 +22,7 @@ A finalidade do TTP é desenvolver um sistema web que nos permita controlar a ut
  
  * Depois que instalar as dependências do projetos, podemos executar **`yarn dev `** no terminal e utilizar a aplicação.
 
- * Para teste das rotas foi utilizado o Insomnia
+ * Para verificação das solicitações da API foi utilizado o Insomnia
  
 ### Rotas Automóvel: 
 
