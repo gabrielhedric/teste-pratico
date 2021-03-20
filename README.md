@@ -1,10 +1,10 @@
-<h3 align="center">
+<h1 align="center">
   Teste Técnico Prático - Back-end
-</h3>
+</h1>
 
-## Sobre o Teste Técnico Prático
+## Sobre o TTP
 
-A finalidade do Teste Técnico Prático é desenvolver um sistema web que nos permita controlar a utilização dos automóveis de uma empresa. Para isso contruí uma WEB API com as funcionalidades que foram passadas. 
+A finalidade do TTP é desenvolver um sistema web que nos permita controlar a utilização dos automóveis de uma empresa. Para isso contruí uma WEB API com as funcionalidades que foram passadas. 
 
 ### Tecnologias Utilizadas
 
