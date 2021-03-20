@@ -1,4 +1,4 @@
-import { response } from 'express';
+import { Automobile } from '../../automobiles/model/Automobile';
 import { Driver } from '../model/Driver';
 import { ICreateDriver } from '../repositories/IDriversRepository';
 
@@ -20,7 +20,7 @@ class DriversRepository {
         return DriversRepository.INSTANCE;
     }
 
-    create({ name } : ICreateDriver ): void  {
+    create({ name } : ICreateDriver ) : Driver {
         const driver = new Driver(); 
     
         Object.assign(driver, {
@@ -29,13 +29,15 @@ class DriversRepository {
         });
     
         this.drivers.push(driver);
+
+        return driver;
     }
 
     list(): Driver[] {
         return this.drivers;
     }
 
-    update({ id, name } : ICreateDriver ){
+    update({ id, name } : ICreateDriver ) : Driver {
 
         const driver = this.drivers.find(driver => driver.id === id);
 
@@ -43,6 +45,8 @@ class DriversRepository {
             name,
             created_at: new Date(),
         });
+    
+        return driver;
     }
 
     delete({ id } ) : void {

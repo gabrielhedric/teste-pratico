@@ -1,4 +1,4 @@
-import { response } from 'express';
+
 import { IDriversRepository, ICreateDriver } from '../../repositories/IDriversRepository';
 
 class UpdateDriverUseCase {
@@ -6,7 +6,10 @@ class UpdateDriverUseCase {
 
     execute({id, name} : ICreateDriver){
         
-        this.driversRepository.update({id, name});
+    const updateDriver = this.driversRepository.update({id, name});
+    
+    return updateDriver;
+
     }
 }
 

@@ -8,7 +8,7 @@ interface ICreateDriver {
 
 interface IDriversRepository {
     list(): Driver[];
-    create({name}: ICreateDriver) : void;
+    create({name}: ICreateDriver) : Driver;
     update({ name} : ICreateDriver);
     delete({ id }) : void;
     listById({ id }) : Driver;

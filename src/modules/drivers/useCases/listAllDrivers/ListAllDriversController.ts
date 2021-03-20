@@ -5,9 +5,15 @@ class ListAllDriversController {
     constructor(private listAllDriversUseCase : ListAllDriversUseCase) {}
 
         handle(request: Request, response: Response) : Response {
-            const all = this.listAllDriversUseCase.execute();
+            
+            try {
+                const all = this.listAllDriversUseCase.execute();
+                return response.json(all);
+            } catch (error) {
+                console.log(error);
+                return response.status(500).json({error: 'Cannot list drivers'});
+            }
 
-            return response.json(all);
         }
     }
 

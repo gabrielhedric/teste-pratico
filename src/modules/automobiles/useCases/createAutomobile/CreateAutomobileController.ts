@@ -9,9 +9,12 @@ class CreateAutomobileController {
     handle(request: Request, response: Response) : Response{
         const { license_plate, color, brand } = request.body; 
 
-        this.createAutomobileUseCase.execute({license_plate, color, brand}); 
-
-        return response.status(201).send();
+        try {
+            const createAutomobile = this.createAutomobileUseCase.execute({license_plate, color, brand}); 
+            return response.status(201).json(createAutomobile);
+        } catch (error) {
+            return response.status(500).json({error: 'Cannot create Automobile '});
+        }  
     }
 }
 

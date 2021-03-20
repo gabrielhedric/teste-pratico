@@ -9,9 +9,13 @@ class DeleteDriverController {
     handle(request: Request, response: Response) {
         const { id } = request.params;
 
-        this.deleteDriverUseCase.execute({id});
-
-        return response.status(201).send();
+        try {
+            this.deleteDriverUseCase.execute({id});
+            return response.status(201).send();;
+        } catch (error) {
+            console.log(error);
+            return response.status(500).json({error: 'Cannot delete driver'});
+        }
     }
 }
 

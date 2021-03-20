@@ -18,7 +18,7 @@ class AutomobilesRepository {
         return AutomobilesRepository.INSTANCE;
     }
 
-    create({ license_plate, color, brand } : ICreateAutomobileDTO ): void  {
+    create({ license_plate, color, brand } : ICreateAutomobileDTO ) : Automobile {
         const automobile = new Automobile(); 
     
         Object.assign(automobile, {
@@ -29,13 +29,16 @@ class AutomobilesRepository {
         });
         
         this.automobiles.push(automobile);
+
+        return automobile;
+
     }
 
     list(): Automobile[] {
         return this.automobiles;
     }
 
-    update({ id, license_plate, color, brand} : ICreateAutomobileDTO ){
+    update({ id, license_plate, color, brand} : ICreateAutomobileDTO ) : Automobile {
 
         const automobile = this.automobiles.find(automobile => automobile.id === id);
 
@@ -45,6 +48,8 @@ class AutomobilesRepository {
             brand,
             created_at: new Date(),
         });
+
+        return automobile;
     }
 
     delete({ id } ) : void {
@@ -59,7 +64,6 @@ class AutomobilesRepository {
         return automobile;
     }
 
-    // Validação de criação para não criar o mesmo automóvel, buscando pela placa
     findyByLicensePlate(license_plate: string) : Automobile {
         const automobile = this.automobiles.find(automobile => automobile.license_plate === license_plate);
         return automobile;

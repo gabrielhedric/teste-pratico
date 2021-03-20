@@ -5,7 +5,7 @@ class DeleteAutomobileUseCase {
 
     execute({ id } ) : void{
 
-        this.automobilesRepository.delete({id});
+    this.automobilesRepository.delete({id});
     }
 }
 

@@ -9,9 +9,13 @@ class DeleteAutomobileController {
         handle(request: Request, response: Response) : Response {
             const { id } = request.params;
 
-            this.deleteAutomobileUseCase.execute({id});
+            try {
+                this.deleteAutomobileUseCase.execute({id});
+                return response.status(201).send();
+            } catch (error) {
+                return response.status(500).json({error: 'Cannot delete Automobile '});
+            }  
 
-            return response.status(201).send();
         }
     }
 

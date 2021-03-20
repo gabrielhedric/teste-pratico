@@ -9,9 +9,12 @@ class ListByIdAutomobileController {
     handle(request: Request, response: Response) : Response {
     const { id } = request.params;
 
-    const automobile = this.listByIdAutomobileUseCase.execute(id);
-
-    return response.json(automobile)
+    try {
+        const automobile = this.listByIdAutomobileUseCase.execute(id);
+        return response.json(automobile)
+    } catch (error) {
+        return response.status(500).json({error: 'Cannot list by id Automobile '});
+    }   
     }
 }
 

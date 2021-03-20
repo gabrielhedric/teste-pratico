@@ -3,7 +3,7 @@ import { IAutomobilesRepository } from '../../repositories/IAutomobilesRepositor
 
 
 class ListAllAutomobilesUseCase {
-    constructor (private automobilesRepository: IAutomobilesRepository){}
+    constructor (private automobilesRepository: IAutomobilesRepository) {} 
 
     execute(): Automobile[] {
         const automobiles = this.automobilesRepository.list();

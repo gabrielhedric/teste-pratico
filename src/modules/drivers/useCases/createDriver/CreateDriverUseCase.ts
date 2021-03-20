@@ -1,4 +1,5 @@
 import { IDriversRepository } from '../../repositories/IDriversRepository'
+import { Driver } from '../../model/Driver';
 
 interface IRequest {
     name: string;
@@ -6,11 +7,14 @@ interface IRequest {
 }
 
 class CreateDriverUseCase {
-    constructor( private driversRepository : IDriversRepository){}
+    constructor( private driversRepository : IDriversRepository) {}
     
-    execute({ name }: IRequest) : void {
+    execute({ name }: IRequest) : Driver {
     
-    this.driversRepository.create({name});
+    const createDriver = this.driversRepository.create({name});
+
+    return createDriver;
+
     }
 }
 

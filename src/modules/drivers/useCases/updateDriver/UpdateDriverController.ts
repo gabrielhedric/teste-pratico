@@ -10,9 +10,15 @@ class UpdateDriverController {
         const { id } = request.params;
         const { name } = request.body;
     
-        const driver = this.updateDriverUseCase.execute({id, name});
-    
-        return response.status(201).json(driver);
+        try {
+            const driver = this.updateDriverUseCase.execute({id, name});
+            return response.status(201).json(driver);
+        } catch (error) {
+            console.log(error);
+            return response.status(500).json({error: 'Can not update the driver'});
+        }
+        
+        
     }
 }
 

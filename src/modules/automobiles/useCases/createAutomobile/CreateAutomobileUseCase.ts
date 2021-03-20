@@ -1,4 +1,5 @@
 import { IAutomobilesRepository } from '../../repositories/IAutomobilesRepositoryDTO';
+import { Automobile } from '../../model/Automobile';
 
 interface IRequest {
     license_plate: string;
@@ -9,15 +10,11 @@ interface IRequest {
 class CreateAutomobileUseCase {
     constructor( private automobilesRepository: IAutomobilesRepository ){}
 
-    execute({ license_plate, color, brand }: IRequest) : void{
-    
-    const automobilieAlreadyExists = this.automobilesRepository.findyByLicensePlate(license_plate);
+    execute({ license_plate, color, brand }: IRequest) : Automobile{
 
-    if (automobilieAlreadyExists) {
-        throw new Error('Automobile already exists!');
-    }
+    const automobile = this.automobilesRepository.create({license_plate, color, brand});
 
-    this.automobilesRepository.create({license_plate, color, brand});
+    return automobile;
     }
 }
 

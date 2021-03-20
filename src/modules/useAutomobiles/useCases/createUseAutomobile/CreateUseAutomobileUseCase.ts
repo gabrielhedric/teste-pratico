@@ -1,18 +1,21 @@
-import { IUseAutomobileRepository } from '../../repositories/IUseAutomobileRepository';
+import { UseAutomobileRepository } from '../../repositories/UseAutomobileRepository';
+import { UseAutomobile } from '../../model/UseAutomobile';
 
 interface IRequest {
-    driverUse: string,
-    carUse: string,
+    driverID: string,
     reasonUse: string,
     license_plate: string;
 }
 
 class CreateUseAutomobileUseCase {
-    constructor(private useAutomobileRepository : IUseAutomobileRepository){}
+    constructor(private useAutomobileRepository : UseAutomobileRepository ){}
 
-    execute({driverUse, carUse, reasonUse }: IRequest ) : void {
+    execute({license_plate, driverID, reasonUse }: IRequest ) : UseAutomobile {
 
-        this.useAutomobileRepository.create(driverUse, carUse, reasonUse);
+    const createUseAutomobile = this.useAutomobileRepository.create({driverID, license_plate, reasonUse});
+    
+    return createUseAutomobile;
+
     }
 }
 

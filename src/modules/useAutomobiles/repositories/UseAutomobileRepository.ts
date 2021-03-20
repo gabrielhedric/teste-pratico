@@ -1,7 +1,5 @@
 import { ICreateUseAutomobileDTO } from './IUseAutomobileRepository';
 import { UseAutomobile } from '../model/UseAutomobile';
-import { DriversRepository } from '../../drivers/repositories/DriversRepository';
-import { AutomobilesRepository } from '../../automobiles/repositories/AutomobilesRepository';
 
 class UseAutomobileRepository {
     public useAutomobiles: UseAutomobile[];
@@ -19,18 +17,49 @@ class UseAutomobileRepository {
         return UseAutomobileRepository.INSTANCE;
     }
 
-    create({id, license_plate, reasonUse }: ICreateUseAutomobileDTO ) {
+    create({driverID, license_plate, reasonUse }: ICreateUseAutomobileDTO ) : UseAutomobile {
         const useAutomobiles = new UseAutomobile();
 
-        const automobile = AutomobilesRepository.getInstance().listById({id})
+        const currentCar = this.useAutomobiles.find(useAutomobile => useAutomobile.license_plate === license_plate && !useAutomobile.endUse);
+        
+        if(currentCar) {
+            throw new Error( ' This license is associated with another driver ');
+        }
 
-        Object.assign(automobile,{
+        const currentDriver = this.useAutomobiles.find(useAutomobile => useAutomobile.license_plate === license_plate && !useAutomobile.endUse);
+
+        if(currentDriver) {
+            throw new Error( 'This license is associated with another driver');
+        }
+        
+
+        Object.assign(useAutomobiles,{
             license_plate,
-            id,
+            driverID,
             reasonUse,
             startUse: new Date()
         });
+
+        console.log(useAutomobiles);
+
+        this.useAutomobiles.push(useAutomobiles);
+
+        return useAutomobiles;
     }
+
+    list(): UseAutomobile[] {
+        return this.useAutomobiles;
+    }
+
+    endUse(useAutomobileID) {
+        const currentUseAutomobile = this.useAutomobiles.findIndex(useAutomobile => useAutomobile.id === useAutomobileID && !useAutomobile.endUse);
+        
+        if(currentUseAutomobile !== -1 ) {
+            this.useAutomobiles[currentUseAutomobile].endUse = new Date();
+        }
+    
+    }
+
 
 }
 

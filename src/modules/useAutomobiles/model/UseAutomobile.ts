@@ -1,11 +1,11 @@
 import { v4 as uuidV4 } from "uuid";
 
 class UseAutomobile {
-    id?: string;
+    id: string;
     startUse: Date;
-    endUse: Date;
-    driverUse: string;
-    carUse: string;
+    endUse?: Date;
+    driverID: string;
+    license_plate: string;
     reasonUse: string;
 
     constructor() {

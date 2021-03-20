@@ -1,11 +1,15 @@
 import { IAutomobilesRepository, ICreateAutomobileDTO } from '../../repositories/IAutomobilesRepositoryDTO';
+import { Automobile } from '../../model/Automobile';
+
 
 class UpdateAutomobileUseCase {
     constructor( private automobilesRepository: IAutomobilesRepository ){}
 
-    execute({ id, license_plate, color, brand} : ICreateAutomobileDTO){
+    execute({ id, license_plate, color, brand} : ICreateAutomobileDTO) : Automobile {
         
-        this.automobilesRepository.update({id, license_plate, color, brand});
+    const updateAutomobile = this.automobilesRepository.update({id, license_plate, color, brand});
+
+    return updateAutomobile;
         
     }
 }
