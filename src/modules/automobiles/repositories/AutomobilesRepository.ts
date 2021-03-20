@@ -58,7 +58,7 @@ class AutomobilesRepository {
         this.automobiles.splice(automobile[1]);
     }
 
-    listById({ id }){
+    listById({ id }) : Automobile {
         const automobile = this.automobiles.find(automobile => automobile.id === id);
 
         return automobile;

@@ -40,8 +40,6 @@ class UseAutomobileRepository {
             startUse: new Date()
         });
 
-        console.log(useAutomobiles);
-
         this.useAutomobiles.push(useAutomobiles);
 
         return useAutomobiles;
@@ -57,7 +55,7 @@ class UseAutomobileRepository {
         if(currentUseAutomobile !== -1 ) {
             this.useAutomobiles[currentUseAutomobile].endUse = new Date();
         }
-    
+
     }
 
 

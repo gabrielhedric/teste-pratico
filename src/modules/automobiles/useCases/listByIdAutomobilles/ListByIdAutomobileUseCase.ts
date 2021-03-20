@@ -1,4 +1,3 @@
-
 import { Automobile } from '../../model/Automobile';
 import { IAutomobilesRepository } from '../../repositories/IAutomobilesRepositoryDTO';
 
