@@ -25,7 +25,9 @@ A finalidade do TTP é desenvolver um sistema web que nos permita controlar a ut
  * Para teste das rotas foi utilizado o Insomnia
  
 ### Rotas Automobile: 
- * <img src="![Uploading image.png…]()
 
+
+
+Rota **`DELETE`**
 
 
