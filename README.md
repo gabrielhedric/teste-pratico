@@ -26,8 +26,18 @@ A finalidade do TTP é desenvolver um sistema web que nos permita controlar a ut
  
 ### Rotas Automóvel: 
 
+Criando um Automóvel: **`POST`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/automobiles/createAutomobile.png?raw=true)
 
+Listando todos os automóveis cadastrados: **`GET`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/automobiles/listAllAutomobiles.png?raw=true)
 
-Deletando um automóvel: Rota **`DELETE`**
+Listando automóvel cadastrado buscando pelo ID: **`GET`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/automobiles/listByIdAutomobile.png?raw=true)
 
+Atualizando automóvel cadastrado buscando pelo ID: **`PUT`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/automobiles/updateAutomobile.png?raw=true)
+
+Deletando um automóvel: **`DELETE`**
+![img](https://github.com/gabrielhedric/teste-pratico-seidor/blob/master/images/automobiles/deleteAutomobile.png?raw=true)
 
