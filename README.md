@@ -11,7 +11,7 @@ A finalidade do TTP é desenvolver um sistema web que nos permita controlar a ut
  * Node.JS
  * Express
  * TypeScript 
- * Princípios de SOLID (SRP) & LSP e Arquitetura Limpa
+ * Princípios de SOLID SRP & LSP e Arquitetura Limpa
  * Foi utilizado a persistência em memória para o desenvolvimento da aplicação
 
 ### Execução do Projeto 
